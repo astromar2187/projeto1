@@ -1,5 +1,5 @@
 # projeto1
-Projeto 1 Compex
+Projeto 1 Compex - Lucia e Maria
 
 ## Sobre o Desafio
 
