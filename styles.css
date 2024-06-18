@@ -1,0 +1,136 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #18181B;
+    color: #C1C5C5;
+    font-family: Arial, sans-serif;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteudo__logo{
+    background-color: black;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.conteudo__input__task{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+    gap: 8px;
+}
+
+#new-task{
+    background-color: #3F3F46;
+    border: 1px solid #18181B;
+    border-radius: 10px;
+    width: 550px;
+    padding: 18px;
+    
+}
+
+#add-task{
+    background-color: #0384C7;
+    padding: 18px 25px;
+    border: 1px solid #18181B;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input, button{
+    color: #C1C5C5;
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: 300;
+    opacity: 1;
+}
+
+#add-task:hover {
+    background-color: #0FA5E9;
+}
+
+.conteudo__titulo__task {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 5px;
+}
+
+.titulo__01{
+    color: #10A2E7;
+}
+
+.titulo__02{
+    color: #A654F5;
+}
+
+.conteudo__separator{
+    opacity: 0.1;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.conteudo__taks__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0.5;
+
+}
+
+.conteudo__taks__main img {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    padding: 20px;
+    width: 95%;
+}
+
+.task input[type="checkbox"] {
+    margin-right: 15px;
+}
+
+.task label {
+    flex: 1;
+    margin: 0;
+    padding: 0 10px;
+    color: #b0b0b0;
+}
+
+.task button {
+    background: none;
+    border: none;
+    color: #f44336;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.task button:hover {
+    color: #ff7961;
+}
