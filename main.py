@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "Seja bem vindo, esse é o TO_DO!"}   
+    return {"message": "Seja bem-vindo, este é o TO_DO!"}
 
 class Task(BaseModel):
     id: str
@@ -21,17 +21,13 @@ tasks.append(task1)
 tasks.append(task2)
 
 @app.post("/tasks/", response_model=Task)
-def criar_task(nome: str):
-    task = Task(id=str(uuid.uuid4()),name=nome, isDone=False)
-    #verificar se a task já existe
-    for t in tasks:
-        if t.id == task.id:
-            raise HTTPException(status_code=400, detail="Task já existe")
-    #task.id = str(uuid.uuid4()) #gerar um id único para cada tarefa
+async def criar_task(task: Task):
+    task.id = str(uuid.uuid4())
+    task.isDone = False
     tasks.append(task)
     return task
 
-@app.put("/tasks/{task_id}", response_model=Task)
+@app.patch("/tasks/{task_id}/done", response_model=Task)
 def marcar_task(task_id: str):
     for t in tasks:
         if t.id == task_id:
@@ -58,8 +54,12 @@ def deletar_task(task_id: str):
             return t
     raise HTTPException(status_code=404, detail="Task não encontrada")
 
-
-@app.put("/tasks/{task_id}", response_model=Task) #terminar isso
-def atualizar_task(task_id: str):
-    print(task_id)
+@app.put("/tasks/{task_id}", response_model=Task)
+def update_task(task_id: str, novo_nome: str):
+    for task in tasks:
+        if task.id == task_id:
+            task.name = novo_nome
+            return task
     raise HTTPException(status_code=404, detail="Task não encontrada")
+
+
